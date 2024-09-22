@@ -11,20 +11,28 @@ class Button {
 }
 
 class Balance {
-    double addRight;
-    double addLeft;
+    double right;
+    double left;
 
     Balance() { }
 
-    Balance(double addLeft, double addRight) {
-        this.addRight = addRight;
-        this.addLeft = addLeft;
+    Balance(double left, double right) {
+        this.right = right;
+        this.left = left;
+    }
+
+    public void addLeft(double number) {
+        left += number;
+    }
+
+    public void addRight(double number) {
+        right += number;
     }
 
     public String result() {
-        if (addRight == addLeft) {
+        if (right == left) {
             return "=";
-        } else if (addRight > addLeft) {
+        } else if (right > left) {
             return "R";
         } else {
             return "L";
