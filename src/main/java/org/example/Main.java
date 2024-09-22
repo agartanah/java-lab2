@@ -89,7 +89,6 @@ class Table {
 
     public boolean setValue(int row, int column, int value) {
         tableNumbers[row][column] = value;
-
         return true;
     }
 
@@ -106,7 +105,7 @@ class Table {
 
         for (int indexRow = 0; indexRow < rowCount; ++indexRow) {
             for (int indexColumn = 0; indexColumn < columnCount; ++indexColumn) {
-                tableString += tableNumbers[indexRow][indexRow] + "\t";
+                tableString += tableNumbers[indexRow][indexColumn] + "\t";
             }
 
             tableString += "\n";
