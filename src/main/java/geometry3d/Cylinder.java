@@ -20,8 +20,8 @@ public class Cylinder {
         this.height = height;
     }
 
-    public Figure getCircle() {
-        return circle;
+    public Circle getCircle() {
+        return (Circle)circle;
     }
 
     public void setCircle(Figure circle) {
