@@ -25,7 +25,7 @@ public class Rectangle implements Figure {
 
     public void setHeight(double height) {
         if (width == 0) {
-            throw new ZeroValueException("Height cannot be zero");
+            throw new ZeroValueException("Hate cannot be zero");
         }
 
         this.height = height;

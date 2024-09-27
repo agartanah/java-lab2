@@ -3,7 +3,7 @@ package geometry2d;
 import exceptions.NoDataException;
 import exceptions.ZeroValueException;
 
-public class Circle implements Figure{
+public class Circle implements Figure {
     double radius;
 
     public double getRadius() {

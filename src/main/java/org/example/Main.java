@@ -1,20 +1,24 @@
 package org.example;
 
 import java.util.ArrayList;
+import java.util.List;
 
 class Button {
-    public int CountClick = 0;
+    private int countClick = 0;
+
+    public int getCountClick() {
+        return countClick;
+    }
 
     void click() {
-        ++CountClick;
+        ++countClick;
+        System.out.println(countClick);
     }
 }
 
 class Balance {
     double right;
     double left;
-
-    Balance() { }
 
     Balance(double left, double right) {
         this.right = right;
@@ -41,16 +45,16 @@ class Balance {
 }
 
 class Bell {
-    String dingdong = "dong";
+    String currentString = "dong";
 
-    public String sound() {
-        return (dingdong.equals("dong")) ? (dingdong = "ding") : (dingdong = "dong");
+    public void sound() {
+        System.out.println((currentString.equals("dong")) ? (currentString = "ding") : (currentString = "dong"));
     }
 }
 
 class OddEvenSeparator {
-    private ArrayList<Integer> oddNumbers = new ArrayList<>();
-    private ArrayList<Integer> evenNumbers = new ArrayList<>();
+    private final List<Integer> oddNumbers = new ArrayList<>();
+    private final List<Integer> evenNumbers = new ArrayList<>();
 
     public boolean addNumber(int number) {
         if (number % 2 == 0) {
@@ -62,19 +66,19 @@ class OddEvenSeparator {
         return true;
     }
 
-    public ArrayList<Integer> odd() {
+    public List<Integer> odd() {
         return oddNumbers;
     }
 
-    public ArrayList<Integer> even() {
+    public List<Integer> even() {
         return evenNumbers;
     }
 }
 
 class Table {
-    private int rowCount;
-    private int columnCount;
-    private int[][] tableNumbers;
+    private final int rowCount;
+    private final int columnCount;
+    private final int[][] tableNumbers;
 
     Table(int rowCount, int columnCount) {
         this.rowCount = rowCount;
@@ -87,9 +91,8 @@ class Table {
         return tableNumbers[row][column];
     }
 
-    public boolean setValue(int row, int column, int value) {
+    public void setValue(int row, int column, int value) {
         tableNumbers[row][column] = value;
-        return true;
     }
 
     public int rows() {
@@ -101,17 +104,17 @@ class Table {
     }
 
     public String toString() {
-        String tableString = "";
+        StringBuilder tableString = new StringBuilder();
 
         for (int indexRow = 0; indexRow < rowCount; ++indexRow) {
             for (int indexColumn = 0; indexColumn < columnCount; ++indexColumn) {
-                tableString += tableNumbers[indexRow][indexColumn] + "\t";
+                tableString.append(tableNumbers[indexRow][indexColumn]).append("\t");
             }
 
-            tableString += "\n";
+            tableString.append("\n");
         }
 
-        return tableString;
+        return tableString.toString();
     }
 
     public double average() {
@@ -135,20 +138,13 @@ public class Main {
         button.click();
         button.click();
 
-        System.out.println(button.CountClick);
+        System.out.println(button.getCountClick());
 
         Balance balance = new Balance(4, 2);
 
         System.out.println(balance.result());
 
         Bell bell = new Bell();
-        System.out.println(bell.sound());
-        System.out.println(bell.sound());
-        System.out.println(bell.sound());
-        System.out.println(bell.sound());
-        System.out.println(bell.sound());
-        System.out.println(bell.sound());
-        System.out.println(bell.sound());
 
 
     }

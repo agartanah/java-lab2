@@ -14,6 +14,6 @@ class ButtonTest {
         button.click();
         button.click();
 
-        assertEquals(3, button.CountClick);
+        assertEquals(3, button.getCountClick());
     }
 }

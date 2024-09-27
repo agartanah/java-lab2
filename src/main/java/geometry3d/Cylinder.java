@@ -21,7 +21,7 @@ public class Cylinder {
     }
 
     public Circle getCircle() {
-        return (Circle)circle;
+        return (Circle) circle;
     }
 
     public void setCircle(Figure circle) {

@@ -2,6 +2,8 @@ package org.example;
 
 import org.junit.jupiter.api.Test;
 
+import java.util.List;
+
 import static org.junit.jupiter.api.Assertions.*;
 
 class OddEvenSeparatorTest {
@@ -25,7 +27,7 @@ class OddEvenSeparatorTest {
         oddEvenSeparator.addNumber(3);
         oddEvenSeparator.addNumber(5);
 
-        assertArrayEquals(new Integer[] { 1, 3, 5 }, oddEvenSeparator.odd().toArray(new Integer[3]));
+        assertEquals(List.of(1, 3, 5), oddEvenSeparator.odd());
     }
 
     @Test
